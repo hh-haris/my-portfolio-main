@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { RippleButton } from "@/components/RippleButton";
+import { RippleButton } from "./RippleButton.jsx";
 
 const NotFound = () => {
   return (

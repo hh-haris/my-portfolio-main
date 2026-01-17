@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { cn } from "@/lib/utils";
+import { Skeleton } from "./skeleton.jsx";
+import { cn } from "./utils.js";
 
 // Standard image component with loading skeleton
 export function SecureImage({ 

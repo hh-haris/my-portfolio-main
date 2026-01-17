@@ -1,16 +1,16 @@
 import { Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { ThemeProvider } from "@/hooks/use-theme";
-import { GridBackground } from "./components/GridBackground";
-import { ProtectedContent } from "./components/ProtectedContent";
-import { PageSkeleton } from "./components/LoadingSkeleton";
-import Navigation from "./components/Navigation";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Lab from "./pages/Lab";
-import Connect from "./pages/Connect";
-import NotFound from "./pages/NotFound";
+import { ThemeProvider } from "./use-theme.jsx";
+import { GridBackground } from "./GridBackground.jsx";
+import { ProtectedContent } from "./ProtectedContent.jsx";
+import { PageSkeleton } from "./LoadingSkeleton.jsx";
+import Navigation from "./Navigation.jsx";
+import Home from "./Home.jsx";
+import About from "./About.jsx";
+import Lab from "./Lab.jsx";
+import Connect from "./Connect.jsx";
+import NotFound from "./NotFound.jsx";
 
 function AnimatedRoutes() {
   const location = useLocation();

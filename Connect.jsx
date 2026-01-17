@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter, faLinkedinIn, faGithub, faDribbble } from "@fortawesome/free-brands-svg-icons";
-import { PageTransition } from "@/components/PageTransition";
+import { PageTransition } from "./PageTransition.jsx";
 import { motion } from "framer-motion";
 
 const Connect = () => {
