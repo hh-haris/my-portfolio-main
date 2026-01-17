@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 210 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 210 100% 56%;
+    --radius: 0rem;
+    --selection-bg: 0 0% 85%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 210 100% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 210 100% 56%;
+    --selection-bg: 0 0% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+  }
+
+  /* Ensure Instrument Serif loads correctly */
+  .font-instrument {
+    font-family: 'Instrument Serif', serif !important;
+  }
+
+  /* Custom selection color - grey instead of blue */
+  ::selection {
+    background-color: hsl(var(--selection-bg));
+    color: hsl(var(--foreground));
+  }
+
+  ::-moz-selection {
+    background-color: hsl(var(--selection-bg));
+    color: hsl(var(--foreground));
+  }
+
+  /* Prevent image downloading */
+  img, svg {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+/* Typography tokens */
+@layer components {
+  /* Spacing tokens */
+  .section-gap { @apply space-y-10; }
+  .section-title-gap { @apply mb-4; }
+  .item-gap { @apply space-y-4; }
+  .para-gap { @apply space-y-2; }
+  
+  /* Text tokens */
+  .t-section { @apply text-2xl md:text-3xl font-instrument; }
+  .t-item-title { @apply font-space font-medium text-base md:text-lg; }
+  .t-body { @apply font-space font-light text-sm md:text-base text-muted-foreground; }
+  .t-meta { @apply font-space text-xs md:text-sm text-muted-foreground; }
+}
+
+/* Prevent copy but allow selection */
+@layer utilities {
+  .no-copy {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+/* Ripple animation */
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.3;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 0.6s ease-out forwards;
+}
+
+/* Mobile-first animations */
+@media (max-width: 768px) {
+  .mobile-bounce {
+    animation: mobileBounce 0.3s ease-out;
+  }
+  
+  .mobile-slide-up {
+    animation: mobileSlideUp 0.4s ease-out;
+  }
+  
+  .mobile-scale {
+    animation: mobileScale 0.2s ease-out;
+  }
+  
+  @keyframes mobileBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  @keyframes mobileSlideUp {
+    from { 
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes mobileScale {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Touch feedback for mobile */
+  button, a, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button:active, [role="button"]:active {
+    transform: scale(0.97);
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* Smooth page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Prevent print/screenshots */
+@media print {
+  body {
+    display: none !important;
+  }
+}
