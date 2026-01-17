@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { PageTransition } from "@/components/PageTransition";
+import { PageTransition } from "./PageTransition.jsx";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { RippleButton } from "@/components/RippleButton";
+import { RippleButton } from "./RippleButton.jsx";
 import { motion } from "framer-motion";
 
 const Lab = () => {

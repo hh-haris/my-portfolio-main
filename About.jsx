@@ -1,10 +1,10 @@
 import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faSwatchbook, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
-import { PageTransition } from "@/components/PageTransition";
+import { PageTransition } from "./PageTransition.jsx";
 import { motion } from "framer-motion";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip.jsx";
+import { cn } from "./utils.js";
 
 const About = () => {
   const [activeSkillTab, setActiveSkillTab] = useState("Tools");

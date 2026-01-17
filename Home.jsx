@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { PageTransition } from "@/components/PageTransition";
+import { PageTransition } from "./PageTransition.jsx";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import { RippleButton } from "@/components/RippleButton";
+import { RippleButton } from "./RippleButton.jsx";
 
 const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
